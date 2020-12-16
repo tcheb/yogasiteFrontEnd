@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AddArticleComponent } from './components/add-article/add-article.component';
+import { ArticleDetailsComponent } from './components/article-details/article-details.component';
+import { ArticlesListComponent } from './components/articles-list/articles-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddArticleComponent,
+    ArticleDetailsComponent,
+    ArticlesListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./article-details.component.scss']
 })
 export class ArticleDetailsComponent implements OnInit {
-  currentArticle = {id: -1, title: '', description: '', published: false};
+  currentArticle = {id: -1, text: '', title: '', description: '', created: '', published: false};
   message = '';
 
   constructor(
@@ -36,6 +36,7 @@ export class ArticleDetailsComponent implements OnInit {
   updatePublished(status: any): void {
     const data = {
       title: this.currentArticle.title,
+      text: this.currentArticle.text,
       description: this.currentArticle.description,
       published: status
     };

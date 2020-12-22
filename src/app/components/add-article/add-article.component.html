@@ -16,6 +16,7 @@
         <div class="form-group">
           <label for="description">Description</label>
           <input
+            type="text"
             class="form-control"
             id="description"
             required
@@ -23,7 +24,32 @@
             name="description"
           />
         </div>
-  
+
+        <div class="form-group">
+          <label for="text">Text</label>
+          <input
+            type="text"
+            class="form-control"
+            id="text"
+            required
+            [(ngModel)]="article.text"
+            name="text"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="text">Group</label>
+          <select 
+            id="group"
+            class="form-control"
+            name="group"
+            required
+            [(ngModel)]="article.group">
+            <option value="" disabled>Choose article group</option>
+            <option *ngFor="let group of groups" [ngValue]="group">{{group.name}}</option>
+         </select>
+        </div>
+
         <button (click)="saveArticle()" class="btn btn-success">Submit</button>
       </div>
   

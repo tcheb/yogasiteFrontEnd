@@ -23,7 +23,6 @@
           />
         </div>
         <div class="form-group">
-          <label for="text">Text</label>
           <editor
             id="text"
             name="text"
@@ -45,6 +44,20 @@
             }"
           ></editor>
         </div>
+
+        <div class="form-group">
+          <label for="group">Group</label>
+          <select 
+            id="group"
+            class="form-control"
+            name="group"
+            required
+            [(ngModel)]="currentArticle.group">
+            <option value="" disabled>Choose article group</option>
+            <option *ngFor="let group of groups" [ngValue]="group">{{group.name}}</option>
+         </select>
+        </div>
+
         <div class="form-group">
           <label><strong>Status:</strong></label>
           {{ currentArticle.published ? "Published" : "Pending" }}
